@@ -3,9 +3,9 @@ import './menu-item.styles.scss';
 const menuItemComponent = ({title,imageUrl,size})=>(
     <div style={{
         backgroundImage:`url(${imageUrl})`
-    }} className={"menu-item"}>
+    }} className={`${size} menu-item`}>
         <div className={"content"}>
-            <h1 className={`${size} menu-item`}>
+            <h1 className={"title"}>
                 {title}
             </h1>
             <span className={'subtitle'}>
