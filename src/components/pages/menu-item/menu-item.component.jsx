@@ -6,7 +6,7 @@ const menuItemComponent = ({title,imageUrl,size})=>(
     }} className={`${size} menu-item`}>
         <div className={"content"}>
             <h1 className={"title"}>
-                {title}
+                {title.toUpperCase()}
             </h1>
             <span className={'subtitle'}>
                     SHOP NOW
