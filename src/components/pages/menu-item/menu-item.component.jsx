@@ -5,7 +5,7 @@ const menuItemComponent = ({title,imageUrl,size})=>(
         backgroundImage:`url(${imageUrl})`
     }} className={"menu-item"}>
         <div className={"content"}>
-            <h1 className={`$`}>
+            <h1 className={`${size} menu-item`}>
                 {title}
             </h1>
             <span className={'subtitle'}>
