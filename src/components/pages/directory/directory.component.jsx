@@ -9,7 +9,7 @@ class DirectoryComponent extends Component{
     render = () =>(
         <div className={"directory-menu"}>
             { this.state.sections.map(({id,title}) =>{
-                <MenuItemComponent key={id} title={title}/>
+                return <MenuItemComponent key={id} title={title}/>
             })}
         </div>
     )
