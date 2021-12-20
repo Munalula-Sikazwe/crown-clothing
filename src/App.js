@@ -1,7 +1,7 @@
 import './App.css';
 import HomepageComponent from "./components/pages/homepage/homepage.component";
 import {Route,Switch} from "react-router-dom";
-import ShopComponent from "./components/pages/shop/shop.component";
+import ShopComponent from "./components/shop/shop.component";
 const hatsPage = () => (
     <div>
 
