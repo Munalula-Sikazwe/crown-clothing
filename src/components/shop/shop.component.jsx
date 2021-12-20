@@ -8,11 +8,11 @@ state = {
 }
 render = ()=>{
     const {collections} = this.state;
-    return (<div>
-        {collections.map((id,...otherCollectionProps) =>(
-            <div key={id}>
-               <PreviewCollectionComponent {...otherCollectionProps}/>
-            </div>
+    return (<div className={"shop-page"}>
+        {collections.map(({id,...otherCollectionProps}) =>(
+
+               <PreviewCollectionComponent key={id} {...otherCollectionProps}/>
+
         ))}
     </div>)
 }
