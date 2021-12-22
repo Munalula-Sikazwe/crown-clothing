@@ -20,7 +20,7 @@ class SignInComponent extends Component {
                 <h2> I Already have an account</h2>
                 <span>Sign in with your email and password.</span>
                 <form OnSubmit={this.handleSubmit}>
-                    <input name={"email"} type="email" value={email} onChange={this.handle} required/>
+                    <input name={"email"} type="email" value={email} onChange={this.handleChange} required/>
                     <input name={"password"} type={"password"} value={password} onChange={this.handleChange} required/>
                     <input type={"submit"} value={"Submit Form"} />
                 </form>
