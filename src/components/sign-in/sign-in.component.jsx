@@ -9,15 +9,20 @@ class SignInComponent extends Component {
     handleSubmit = event =>{
         event.preventDefault();
     }
+    handleChange = event =>{
+        const {value,name } = event.target;
+        console.log(name);
+        this.setState({[name]:value});
+    }
     render = ()=>{
         const {email,password} = this.state;
             return (<div className={"sign-in"}>
                 <h2> I Already have an account</h2>
                 <span>Sign in with your email and password.</span>
                 <form OnSubmit={this.handleSubmit}>
-                    <input name={"email"} type="email" value={email} required/>
-                    <input name={"password"} type={"password"} value={password} required/>
-                    <input type={"submit"} value={"Submit Form"}/>
+                    <input name={"email"} type="email" value={email} onChange={this.handle} required/>
+                    <input name={"password"} type={"password"} value={password} onChange={this.handleChange} required/>
+                    <input type={"submit"} value={"Submit Form"} />
                 </form>
             </div>)
     }
