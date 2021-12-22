@@ -14,6 +14,7 @@ class SignInComponent extends Component {
                 <form>
                     <input name={"email"} type="email" value={email} required/>
                     <input name={"password"} type={"password"} value={password} required/>
+                    <input type={"submit"} value={"Submit Form"}/>
                 </form>
             </div>)
     }
