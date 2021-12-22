@@ -8,6 +8,7 @@ class SignInComponent extends Component {
     }
     handleSubmit = event =>{
         event.preventDefault();
+        this.setState({email:'',password:'',})
     }
     handleChange = event =>{
         const {value,name } = event.target;
