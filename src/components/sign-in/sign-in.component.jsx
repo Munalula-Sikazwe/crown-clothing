@@ -27,11 +27,16 @@ class SignInComponent extends Component {
                                     label={'email'} required/>
                 <FormInputComponent name={"password"} type={"password"} value={password}
                                     handleChange={this.handleChange} label={'password'} required/>
-                <CustomButtonComponent type={"submit"}>
-                    Sign In
-                </CustomButtonComponent>
+                <div className={"buttons"}>
+                    <CustomButtonComponent type={"submit"}>
+                        Sign In
+                    </CustomButtonComponent>
 
-                <CustomButtonComponent onClick={signinWithGoogle} isGoogleSignIn>{' '}Sign In with Google{' '}</CustomButtonComponent>
+                    <CustomButtonComponent onClick={signinWithGoogle} isGoogleSignIn>
+                        {' '}Sign In with Google{' '}
+                    </CustomButtonComponent>
+                </div>
+
             </form>
         </div>)
     }
