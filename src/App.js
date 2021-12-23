@@ -11,6 +11,14 @@ class App extends Component{
     state ={
         currentUser:null
     }
+    componentDidMount() {
+        auth.onAuthStateChanged(
+            user => {
+                this.setState({currentUser:user})
+            }
+        )
+    }
+
     render = ()=>(
         <div>
         <Header/>
