@@ -12,23 +12,29 @@ class App extends Component{
         currentUser:null
     }
     componentDidMount() {
-        auth.onAuthStateChanged(
+        this.unSubscribe = auth.onAuthStateChanged(
             user => {
                 this.setState({currentUser:user})
             }
-        )
+        );
+    }
+    componentWillUnmount() {
+        this.unSubscribe();
     }
 
-    render = ()=>(
-        <div>
-        <Header/>
-        <Switch>
-            <Route path={"/"} component={HomepageComponent} exact/>
-            <Route path={"/shop"} component={ShopComponent} exact/>
-            <Route path={"/signin"} component={SignInSignOutComponent} exact/>
-        </Switch>
+    render = ()=>{
+        const {currentUser} = this.state;
+        return <div>
+            <Header currentUser={currentUser}/>
+            <Switch>
+                <Route path={"/"} component={HomepageComponent} exact/>
+                <Route path={"/shop"} component={ShopComponent} exact/>
+                <Route path={"/signin"} component={SignInSignOutComponent} exact/>
+            </Switch>
 
-    </div>)
+        </div>
+    }
+
 
 }
 
