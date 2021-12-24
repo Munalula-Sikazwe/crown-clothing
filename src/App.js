@@ -20,8 +20,10 @@ class App extends Component {
                         this.setState({
                             currentUser: snapShot.id,
                             ...snapShot.data()
+                        },()=>{
+                            console.log(this.state);
                         });
-                        console.log(this.state)
+
                     });
 
                 }
