@@ -73,7 +73,9 @@ this.setState({
                             label={"Confirm Password"}
                             required
                         />
-                        <CustomButtonComponent type={"submit"}/>
+                        <CustomButtonComponent type={"submit"}>
+                            Sign Up
+                        </CustomButtonComponent>
                     </form>
                 </h2>
 
