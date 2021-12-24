@@ -29,7 +29,11 @@ this.setState({
 })
         }catch (error) {
             console.log(error);
-        };
+        }
+    }
+    handleChange = event=>{
+        const {name,value} = event.target;
+        this.setState({[name]:value})
     }
     render = () => {
         const {displayName, email, password, confirmPassword} = this.state;
