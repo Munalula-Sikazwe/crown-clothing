@@ -32,7 +32,7 @@ class SignInComponent extends Component {
                         Sign In
                     </CustomButtonComponent>
 
-                    <CustomButtonComponent onClick={signinWithGoogle} isGoogleSignIn>
+                    <CustomButtonComponent onClick={()=>{signinWithGoogle()}} isGoogleSignIn>
                         {' '}Sign In with Google{' '}
                     </CustomButtonComponent>
                 </div>
