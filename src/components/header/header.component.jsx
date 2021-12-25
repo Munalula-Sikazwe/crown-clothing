@@ -22,5 +22,5 @@ const header = ({currentUser}) => (
         </div>
     </div>
 )
-
-export default connectAdvanced()(header);
+const mapStateToProps = state =>({currentUser:state.user.currentUser});
+export default connectAdvanced(mapStateToProps)(header);
