@@ -1,10 +1,10 @@
 import './App.css';
-import HomepageComponent from "./components/pages/homepage/homepage.component";
+import HomepageComponent from "./pages/homepage/homepage.component";
 import {Route, Switch} from "react-router-dom";
 import ShopComponent from "./components/shop/shop.component";
 import Header from "./components/header/header.component";
-import SignInSignOutComponent from "./components/pages/sign-in-sign-up/sign-in-sign-out.component";
-import {auth, createUserProfileDocument} from "./components/firebase/firebase.utils";
+import SignInSignOutComponent from "./pages/sign-in-sign-up/sign-in-sign-out.component";
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {Component} from "react";
 
 class App extends Component {

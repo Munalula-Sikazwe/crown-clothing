@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './sign-in.styles.scss';
 import FormInputComponent from "../form-input/form-input.component";
 import CustomButtonComponent from "../custom-button/custom-button.component";
-import {auth,signinWithGoogle} from "../firebase/firebase.utils";
+import {auth,signinWithGoogle} from "../../firebase/firebase.utils";
 
 class SignInComponent extends Component {
     state = {
