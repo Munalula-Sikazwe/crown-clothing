@@ -40,7 +40,7 @@ this.setState({currentUser: user})
     render = () => {
         const {currentUser} = this.state;
         return <div>
-            <Header currentUser={currentUser}/>
+            <Header />
             <Switch>
                 <Route path={"/"} component={HomepageComponent} exact/>
                 <Route path={"/shop"} component={ShopComponent} exact/>
