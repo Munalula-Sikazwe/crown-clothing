@@ -8,8 +8,8 @@ import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {Component} from "react";
 import {setCurrentUser} from "./redux/user/user.actions";
 import {connect} from "react-redux";
-import Redirect from "react-router-dom/es/Redirect";
-import SignInComponent from "./components/sign-in/sign-in.component";
+import {Redirect} from "react-router-dom";
+
 
 class App extends Component {
 
@@ -50,7 +50,7 @@ setCurrentUser( user)
                 <Route path={"/signin"} render={
                     ()=>this.props.currentUser ?
                         <Redirect to={"/"}/>
-                        :<SignInComponent/>
+                        :<SignInSignOutComponent/>
                 } exact/>
             </Switch>
 
