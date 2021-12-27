@@ -5,6 +5,7 @@ import {ReactComponent as Logo} from '../../assets/logo.svg';
 import {auth} from "../../firebase/firebase.utils";
 import {connect} from "react-redux";
 import CartIconComponent from "../cart-icon/cart-icon.component";
+import CartDropdownComponent from "../cart-dropdown/cart-dropdown.component";
 
 const handleLogout = () => auth.signOut();
 
@@ -25,6 +26,7 @@ const header = ({currentUser}) => (
             }
             <CartIconComponent/>
         </div>
+        <CartDropdownComponent/>
     </div>
 )
 const mapStateToProps = state => ({currentUser: state.user.currentUser});
