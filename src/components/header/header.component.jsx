@@ -9,7 +9,7 @@ import CartDropdownComponent from "../cart-dropdown/cart-dropdown.component";
 
 const handleLogout = () => auth.signOut();
 
-const header = ({currentUser}) => (
+const header = ({currentUser,hidden}) => (
     <div className={"header"}>
         <Link to={"/"} className={"logo-container"}>
             <Logo className={"logo"}/>
@@ -26,7 +26,12 @@ const header = ({currentUser}) => (
             }
             <CartIconComponent/>
         </div>
-        <CartDropdownComponent/>
+        {
+            hidden?
+            <CartDropdownComponent/>
+                :null
+        }
+
     </div>
 )
 const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => (
