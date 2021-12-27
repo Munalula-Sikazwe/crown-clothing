@@ -4,7 +4,11 @@ import './cart-dropdown.styles.scss';
 
 const cartDropdownComponent = ()=>(
     <div className="cart-dropdown">
-
+<div className="cart-items">
+    <CustomButtonComponent>
+        GO TO CHECKOUT
+    </CustomButtonComponent>
+</div>
     </div>
 );
 
