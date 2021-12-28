@@ -7,7 +7,7 @@ import {addItem} from "../../redux/cart/cart.actions";
 const collectionItemComponent = ({item,addItem})=>{
     const {name,price,imageUrl} = item;
     return(
-        <div className={"collection-item"}>
+        <div className={"collection-item"} onClick={addItem}>
             <div className={"image"}
                  style={{backgroundImage:`url(${imageUrl})`}}
             />
