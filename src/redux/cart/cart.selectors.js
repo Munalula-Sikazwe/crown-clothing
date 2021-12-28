@@ -7,7 +7,7 @@ export const selectCartItems = createSelector(
     cart => cart.cartItems
 );
 
-export const SelectCartItemsCount = createSelector(
+export const selectCartItemsCount = createSelector(
     [selectCartItems],
     cartItems => cartItems.reduce((total, cartItem)=> total + cartItem.quantity,0)
 )
