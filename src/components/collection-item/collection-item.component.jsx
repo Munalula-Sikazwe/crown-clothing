@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import {addItem} from "../../redux/cart/cart.actions";
 
 const collectionItemComponent = ({item,addItem})=>{
-    console.log(item);
     const {name,price,imageUrl} = item;
     return(
         <div className={"collection-item"}>
