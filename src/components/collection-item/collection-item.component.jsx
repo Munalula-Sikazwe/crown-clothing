@@ -5,9 +5,10 @@ import {connect} from "react-redux";
 import {addItem} from "../../redux/cart/cart.actions";
 
 const collectionItemComponent = ({item,addItem})=>{
+    const add = ()=> addItem(item);
     const {name,price,imageUrl} = item;
     return(
-        <div className={"collection-item"} onClick={addItem}>
+        <div className={"collection-item"} >
             <div className={"image"}
                  style={{backgroundImage:`url(${imageUrl})`}}
             />
@@ -15,7 +16,7 @@ const collectionItemComponent = ({item,addItem})=>{
                 <span className={"name"}>{name}</span>
                 <span className={"price"}>{price}</span>
             </div>
-            <CustomButtonComponent>
+            <CustomButtonComponent onClick={add}>
                 Add to Cart
             </CustomButtonComponent>
         </div>
