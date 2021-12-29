@@ -9,7 +9,8 @@ import {Component} from "react";
 import {setCurrentUser} from "./redux/user/user.actions";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
-
+import {createStructuredSelector} from "reselect";
+import {selectCurrentUser} from "./redux/user/user.selector";
 
 class App extends Component {
 
@@ -59,9 +60,9 @@ setCurrentUser( user)
 
 
 }
-const mapStateToProps = ({user})=>(
+const mapStateToProps = createStructuredSelector(
     {
-  currentUser:user.currentUser
+  currentUser:selectCurrentUser
     }
 );
 const mapDispatchToProps = dispatch => (
