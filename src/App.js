@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "./redux/user/user.selector";
+import CheckoutComponent from "./pages/homepage/checkout/checkout.component";
 
 class App extends Component {
 
@@ -53,6 +54,7 @@ setCurrentUser( user)
                         <Redirect to={"/"}/>
                         :<SignInSignOutComponent/>
                 } exact/>
+                <Route path={"/checkout"} component={CheckoutComponent} exact/>
             </Switch>
 
         </div>
