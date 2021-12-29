@@ -6,9 +6,13 @@ import CartItemComponent from "../cart-item/cart-item.component";
 import {selectCartItems} from "../../redux/cart/cart.selectors";
 import {createStructuredSelector} from "reselect";
 import {withRouter} from "react-router-dom";
+import {toggleCartHidden} from "../../redux/cart/cart.actions";
+const cartDropdownComponent = ({cartItems, history,dispatch}) => {
+   const handleCheckout = ()=> {
+       history.push("/checkout");
+       dispatch(toggleCartHidden())
 
-const cartDropdownComponent = ({cartItems, history}) => {
-   const handleCheckout = ()=> history.push("/checkout")
+   }
     return (<div className="cart-dropdown">
         <div className="cart-items">
             {
