@@ -27,6 +27,6 @@ const checkoutItem = ({cartItem,clearCart}) => {
     );
 }
 const mapDispatchToProps = dispatch=>({
-    clearCart: item=> dispatch(clearCart(cartItem))
+    clearCart: item=> dispatch(clearCart(item))
 });
 export default connect(null,mapDispatchToProps)(checkoutItem);
