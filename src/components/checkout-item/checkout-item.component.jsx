@@ -15,7 +15,9 @@ const checkoutItem = ({cartItem,clearCart}) => {
 {name}
         </span>
             <span className="quantity">
+                <div className="arrow">&#10094;</div>
 {quantity}
+                <div className="arrow">&#10095;</div>
         </span>
             <span className="price">
 {price}
