@@ -37,9 +37,9 @@ Remove
         </div>
         {
             cartItems.map(cartItem => (
-                <div>
-                    <CheckoutItemComponent key={cartItem.id} cartItem={cartItem}/>
-                </div>
+
+                <CheckoutItemComponent key={cartItem.id} cartItem={cartItem}/>
+
             ))
         }
         <div className={"total"}>
