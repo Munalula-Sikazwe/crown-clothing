@@ -7,5 +7,5 @@ const directoryReducer = (state=INITIAL_STATE)=>(
     {
         ...state
     }
-    )
+    );
 export default directoryReducer;
