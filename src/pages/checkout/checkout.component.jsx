@@ -46,6 +46,11 @@ Remove
         <div className={"total"}>
             <span>Total : $ {priceTotal}</span>
         </div>
+        <div className="test-warning">
+            *Please use the test credit card for
+            <br/>
+            4242 4242 4242 4242 - Exp 04/22 CVV 123
+        </div>
         <StripeButtonComponent price={priceTotal}/>
     </div>
 );
