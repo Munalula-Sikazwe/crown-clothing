@@ -5,13 +5,14 @@ import ShopComponent from "./components/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInSignOutComponent from "./pages/sign-in-sign-up/sign-in-sign-out.component";
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
-import {Component} from "react";
+import React, {Component} from "react";
 import {setCurrentUser} from "./redux/user/user.actions";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "./redux/user/user.selector";
 import CheckoutComponent from "./pages/checkout/checkout.component";
+import CollectionComponent from "./components/collection/collection.component";
 
 class App extends Component {
 
@@ -54,6 +55,7 @@ setCurrentUser( user)
                         <Redirect to={"/"}/>
                         :<SignInSignOutComponent/>
                 } exact/>
+                <Route path={`/shop/:categoryId`} component={CollectionComponent()} exact/>
                 <Route path={"/checkout"} component={CheckoutComponent} exact/>
             </Switch>
 
