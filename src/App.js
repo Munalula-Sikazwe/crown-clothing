@@ -55,7 +55,7 @@ setCurrentUser( user)
                         <Redirect to={"/"}/>
                         :<SignInSignOutComponent/>
                 } exact/>
-                <Route path={`/shop/:categoryId`} component={CollectionComponent} exact/>
+                <Route path={`/shop/:collectionId`} component={CollectionComponent} exact/>
                 <Route path={"/checkout"} component={CheckoutComponent} exact/>
             </Switch>
 

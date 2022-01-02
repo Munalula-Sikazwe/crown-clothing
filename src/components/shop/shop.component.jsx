@@ -6,6 +6,6 @@ import CollectionComponent from "../collection/collection.component";
 const shopComponent = ({match}) =>
     (<div className={"shop-page"}>
         <Route path={match.path} component={CollectionsOverviewComponent} exact/>
-        <Route path={`${match.path}/:categoryId`} component={CollectionComponent} exact/>
+        <Route path={`${match.path}/:collectionId`} component={CollectionComponent} exact/>
     </div>);
 export default shopComponent;
