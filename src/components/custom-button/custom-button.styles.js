@@ -1,5 +1,16 @@
 import styled, {css} from 'styled-components';
 
+const getButtonStyles = props => {
+    switch (props) {
+        case props.googleSignIn:
+            return GoogleSignInStyles
+        case props.inverted:
+            return InvertedButtonStyles
+        default:
+            return ButtonStyles
+    }
+
+}
 export const ButtonStyles = css
     `
       background-color: black;
@@ -51,19 +62,8 @@ export const CustomButtonContainer = styled.button
       cursor: pointer;
       display: flex;
       justify-content: center;
-
+      ${getButtonStyles}
 
 
     `
 
-const getButtonStyles = props => {
-    switch (props) {
-        case props.googleSignIn:
-            return GoogleSignInStyles
-        case props.inverted:
-            return InvertedButtonStyles
-        default:
-            return ButtonStyles
-    }
-
-}
