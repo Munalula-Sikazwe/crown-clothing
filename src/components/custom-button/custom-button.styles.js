@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 
 const getButtonStyles = props => {
     switch (props) {
-        case props.googleSignIn:
+        case props.isGoogleSignIn:
             return GoogleSignInStyles
         case props.inverted:
             return InvertedButtonStyles
