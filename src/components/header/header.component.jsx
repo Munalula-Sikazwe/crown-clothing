@@ -9,11 +9,12 @@ import CartDropdownComponent from "../cart-dropdown/cart-dropdown.component";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "../../redux/user/user.selector";
 import {selectCartHidden} from "../../redux/cart/cart.selectors";
+import {HeaderContainer} from "./header.styles";
 
 const handleLogout = () => auth.signOut();
 
-const header = ({currentUser,hidden}) => (
-    <div className={"header"}>
+const header = ({currentUser, hidden}) => (
+    <HeaderContainer>
         <Link to={"/"} className={"logo-container"}>
             <Logo className={"logo"}/>
         </Link>
@@ -30,17 +31,18 @@ const header = ({currentUser,hidden}) => (
             <CartIconComponent/>
         </div>
         {
-            hidden?
-            <CartDropdownComponent/>
-                :null
+            hidden ?
+                <CartDropdownComponent/>
+                : null
         }
+    </HeaderContainer>
 
-    </div>
+
 )
 const mapStateToProps = createStructuredSelector(
     {
-        currentUser:selectCurrentUser,
-        hidden:selectCartHidden
+        currentUser: selectCurrentUser,
+        hidden: selectCartHidden
     }
 );
 export default connect(mapStateToProps)(header);
