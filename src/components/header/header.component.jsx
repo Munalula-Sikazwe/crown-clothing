@@ -8,7 +8,7 @@ import CartDropdownComponent from "../cart-dropdown/cart-dropdown.component";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "../../redux/user/user.selector";
 import {selectCartHidden} from "../../redux/cart/cart.selectors";
-import {HeaderContainer, LogoContainer, OptionContainer, OptionDiv, OptionLink} from "./header.styles";
+import {HeaderContainer, LogoContainer, OptionContainer,  OptionLink} from "./header.styles";
 
 const handleLogout = () => auth.signOut();
 
@@ -22,9 +22,9 @@ const header = ({currentUser, hidden}) => (
             <OptionLink to={"/contact"}>CONTACT</OptionLink>
             {
                 currentUser ?
-                    <OptionDiv onClick={handleLogout}>
+                    <OptionLink as={"div"} onClick={handleLogout}>
                         SIGN OUT
-                    </OptionDiv>
+                    </OptionLink>
                     : <OptionLink to={"/signin"}>SIGN IN</OptionLink>
             }
             <CartIconComponent/>
