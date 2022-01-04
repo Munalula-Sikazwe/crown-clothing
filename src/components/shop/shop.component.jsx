@@ -30,4 +30,4 @@ const mapDispatchToProps = dispatch => (
         updateCollections:collectionsMap => dispatch(updateCollections(collectionsMap))
     }
 );
-export default connect(mapDispatchToProps)(ShopComponent);
+export default connect(null,mapDispatchToProps)(ShopComponent);
