@@ -57,7 +57,7 @@ export const addCollectionsAndDocuments = async (collectionKey, objectsToAdd) =>
     return await batch.commit();
 }
 export const convertCollectionsSnapShotToMap = (collections) => {
-    const transformedCollection = collections.doc.map(
+    const transformedCollection = collections.docs.map(
         doc => {
             const {title, items} = doc.data();
             return {
