@@ -48,12 +48,13 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 export const addCollectionsAndDocuments = async (collectionKey, objectsToAdd) => {
     const collectionRef = firestore.collection(collectionKey);
     const batch = firestore.batch();
-    objectsToAdd.forEach(obj=>{
+    objectsToAdd.forEach(obj => {
         const newDocRef = collectionRef.doc();
-        batch.set(newDocRef,obj);
+
+        batch.set(newDocRef, obj);
     })
-    console.log("committing shop data.")
-return await batch.commit();
+
+    return await batch.commit();
 }
 firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
