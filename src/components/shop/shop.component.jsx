@@ -2,8 +2,12 @@ import React, {Component} from "react";
 import CollectionsOverviewComponent from "../collections-overview/collections-overview.component";
 import {Route} from "react-router-dom";
 import CollectionComponent from "../collection/collection.component";
-
+import {firestore} from "../../firebase/firebase.utils";
 class ShopComponent extends Component{
+    unSubscribe = null;
+    componentDidMount() {
+        const collectionRef = firestore.collection('collections')
+    }
 
     render = ()=> {
         const {match} = this.props;
