@@ -7,8 +7,8 @@ class ShopComponent extends Component{
     unSubscribe = null;
     componentDidMount() {
         const collectionRef = firestore.collection('collections')
-        collectionRef.onSnapshot(snapShot=>{
-            convertCollectionsSnapShotToMap(snapShot);
+        this.unSubscribe = collectionRef.onSnapshot(async snapShot=>{
+            const collectionsMap = convertCollectionsSnapShotToMap(snapShot);
         })
     }
 
