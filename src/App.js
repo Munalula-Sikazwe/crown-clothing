@@ -14,7 +14,7 @@ import CheckoutComponent from "./pages/checkout/checkout.component";
 import CollectionComponent from "./components/collection/collection.component";
 import {selectCollectionsForPreview} from "./redux/shop/shop.selectors";
 class App extends Component {
-
+    unSubscribe = null;
 
     componentDidMount() {
         const {setCurrentUser,collectionsArray} = this.props;
