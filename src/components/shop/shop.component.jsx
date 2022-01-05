@@ -6,6 +6,9 @@ import {convertCollectionsSnapShotToMap, firestore} from "../../firebase/firebas
 import {updateCollections} from "../../redux/shop/shop.action";
 import {connect} from "react-redux";
 class ShopComponent extends Component{
+    state = {
+        loading: true
+    }
     unSubscribe = null;
     componentDidMount() {
         const {updateCollections} = this.props;
@@ -14,6 +17,7 @@ class ShopComponent extends Component{
             console.log(snapShot,":snapshot data")
             const collectionsMap = await convertCollectionsSnapShotToMap(snapShot);
             updateCollections(collectionsMap);
+            this.setState({loading:false})
         })
     }
 
