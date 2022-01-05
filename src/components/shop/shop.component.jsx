@@ -5,6 +5,10 @@ import CollectionComponent from "../collection/collection.component";
 import {convertCollectionsSnapShotToMap, firestore} from "../../firebase/firebase.utils";
 import {updateCollections} from "../../redux/shop/shop.action";
 import {connect} from "react-redux";
+import WithSpinner from "../with-spinner/with-spinner";
+
+const CollectionWithSpinner = WithSpinner(CollectionComponent);
+const CollectionsOverViewWithSpinner = WithSpinner(CollectionsOverviewComponent)
 class ShopComponent extends Component{
     state = {
         loading: true
@@ -23,9 +27,10 @@ class ShopComponent extends Component{
 
     render = ()=> {
         const {match} = this.props;
+        const {isLoading} = this.state;
         return (<div className={"shop-page"}>
-            <Route path={match.path} component={CollectionsOverviewComponent} exact/>
-            <Route path={`${match.path}/:collectionId`} component={CollectionComponent} exact/>
+            <Route path={match.path} render={(props)=><CollectionsOverViewWithSpinner isLoading={isLoading} {...props}/>} exact/>
+            <Route path={`${match.path}/:collectionId`} render={(props)=><CollectionWithSpinner isLoading={isLoading}{...props}/>} exact/>
         </div>);
     }
 
