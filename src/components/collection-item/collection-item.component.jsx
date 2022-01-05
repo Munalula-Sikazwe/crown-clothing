@@ -16,9 +16,12 @@ const collectionItemComponent = ({item,addItem})=>{
                 <span className={"name"}>{name}</span>
                 <span className={"price"}>{price}</span>
             </div>
-            <CustomButtonComponent onClick={add}>
-                Add to Cart
-            </CustomButtonComponent>
+            <div className={"custom-button"}>
+                <CustomButtonComponent onClick={add}>
+                    Add to Cart
+                </CustomButtonComponent>
+            </div>
+
         </div>
     );
 }
