@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import CollectionItemComponent from "../collection-item/collection-item.component";
 
 
-const collectionComponent = ({collection,history,match}) => {
+const collectionComponent = ({collection}) => {
     const  {title,items} = collection;
    return ( <div className="collection-page">
         <h2 className={"title"} >
