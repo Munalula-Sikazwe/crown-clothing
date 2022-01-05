@@ -17,7 +17,7 @@ class ShopComponent extends Component{
     componentDidMount() {
         const {updateCollections} = this.props;
         const collectionRef = firestore.collection('collections')
-        this.unSubscribe = collectionRef.onSnapshot(async snapShot=>{
+        collectionRef.get().then(async snapShot=>{
             console.log(snapShot,":snapshot data")
             const collectionsMap = await convertCollectionsSnapShotToMap(snapShot);
             updateCollections(collectionsMap);
