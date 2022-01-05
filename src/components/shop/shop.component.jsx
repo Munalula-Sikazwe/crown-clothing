@@ -8,10 +8,10 @@ import {connect} from "react-redux";
 import WithSpinner from "../with-spinner/with-spinner";
 
 const CollectionWithSpinner = WithSpinner(CollectionComponent);
-const CollectionsOverViewWithSpinner = WithSpinner(CollectionsOverviewComponent)
+const CollectionsOverViewWithSpinner = WithSpinner(CollectionsOverviewComponent);
 class ShopComponent extends Component{
     state = {
-        loading: true
+        isLoading: true
     }
     unSubscribe = null;
     componentDidMount() {
@@ -21,13 +21,14 @@ class ShopComponent extends Component{
             console.log(snapShot,":snapshot data")
             const collectionsMap = await convertCollectionsSnapShotToMap(snapShot);
             updateCollections(collectionsMap);
-            this.setState({loading:false})
+            this.setState({isLoading:false})
         })
     }
 
     render = ()=> {
         const {match} = this.props;
         const {isLoading} = this.state;
+        console.log(isLoading);
         return (<div className={"shop-page"}>
             <Route path={match.path} render={(props)=><CollectionsOverViewWithSpinner isLoading={isLoading} {...props}/>} exact/>
             <Route path={`${match.path}/:collectionId`} render={(props)=><CollectionWithSpinner isLoading={isLoading}{...props}/>} exact/>
