@@ -3,7 +3,7 @@ import "./preview-collection.styles.scss";
 import CollectionItemComponent from "../collection-item/collection-item.component";
 const previewCollectionComponent = ({title,items})=>(
     <div className={"collection-preview"}>
-        <h1 className={"title"}>
+        <h1 className={"title"} >
             {title.toUpperCase()}
         </h1>
         <div className={"preview"}>

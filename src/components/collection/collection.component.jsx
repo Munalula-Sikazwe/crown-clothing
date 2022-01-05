@@ -4,11 +4,14 @@ import {selectCollection} from "../../redux/shop/shop.selectors";
 import {connect} from "react-redux";
 import CollectionItemComponent from "../collection-item/collection-item.component";
 
-const collectionComponent = ({collection}) => {
+
+const collectionComponent = ({collection,history,match}) => {
     const  {title,items} = collection;
    return ( <div className="collection-page">
-        <h2 className={"title"}>
-            {title}
+        <h2 className={"title"} >
+
+                {title}
+
         </h2>
        <div className="items">
            {

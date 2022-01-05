@@ -28,7 +28,7 @@ class ShopComponent extends Component{
     render = ()=> {
         const {match} = this.props;
         const {isLoading} = this.state;
-        console.log(isLoading);
+
         return (<div className={"shop-page"}>
             <Route path={match.path} render={(props)=><CollectionsOverViewWithSpinner isLoading={isLoading} {...props}/>} exact/>
             <Route path={`${match.path}/:collectionId`} render={(props)=><CollectionWithSpinner isLoading={isLoading}{...props}/>} exact/>
