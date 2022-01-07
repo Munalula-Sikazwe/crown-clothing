@@ -34,7 +34,7 @@ setUserCredentials({
     }
     const handleChange = event=>{
         const {name,value} = event.target;
-        setUserCredentials(...userCredentials,{[name]:value})
+        setUserCredentials({...userCredentials,[name]:value})
     }
 
         return (
