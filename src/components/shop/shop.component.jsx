@@ -4,7 +4,7 @@ import {Route} from "react-router-dom";
 import CollectionComponent from "../collection/collection.component";
 import {connect} from "react-redux";
 import WithSpinner from "../with-spinner/with-spinner";
-import {selectCollectionIsFetching} from "../../redux/shop/shop.selectors";
+import {selectCollectionIsFetching, selectCollectionIsLoaded} from "../../redux/shop/shop.selectors";
 import {createStructuredSelector} from "reselect";
 import {fetchCollectonsStartAsync} from "../../redux/shop/shop.action";
 
@@ -38,7 +38,8 @@ const mapDispatchToProps = dispatch => ({
 });
 const mapStateToProps = createStructuredSelector(
     {
-        isCollectionFetching: selectCollectionIsFetching
+        isCollectionFetching: selectCollectionIsFetching,
+        isCollectionLoading: selectCollectionIsLoaded
     }
 )
 export default connect(mapStateToProps, mapDispatchToProps)(ShopComponent);
