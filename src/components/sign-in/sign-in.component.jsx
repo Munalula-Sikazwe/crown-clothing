@@ -12,7 +12,7 @@ const SignInComponent = ()=> {
         const {email, password} = userCredentials;
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({email: '', password: ''})
+            setUserCredentials({email: '', password: ''})
         } catch (error) {
             console.log("error signing in ", error.message)
         }
