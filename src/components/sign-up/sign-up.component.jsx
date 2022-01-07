@@ -48,7 +48,7 @@ setUserCredentials({
                             type={"text"}
                             name={"displayName"}
                             value={displayName}
-                            onChange={this.handleChange}
+                            onChange={handleChange}
                             label={"displayName"}
                             required
                         /><FormInputComponent
