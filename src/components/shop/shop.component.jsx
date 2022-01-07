@@ -20,14 +20,14 @@ class ShopComponent extends Component {
     }
 
     render = () => {
-        const {match,isCollectionFetching} = this.props;
+        const {match,isCollectionFetching,isCollectionLoading} = this.props;
 
 
         return (<div className={"shop-page"}>
             <Route path={match.path}
                    render={(props) => <CollectionsOverViewWithSpinner isLoading={isCollectionFetching} {...props}/>} exact/>
             <Route path={`${match.path}/:collectionId`}
-                   render={(props) => <CollectionWithSpinner isLoading={isCollectionFetching}{...props}/>} exact/>
+                   render={(props) => <CollectionWithSpinner isLoading={!isCollectionLoading}{...props}/>} exact/>
         </div>);
     }
 
